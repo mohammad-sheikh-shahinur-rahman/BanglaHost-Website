@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - BanglaHost</title>
+    <meta name="description" content="Official documentation for BanglaHost - the modern local web development platform for Windows.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body{font-family:'Inter',sans-serif;background:#0f172a;color:#e2e8f0;}
+        .docs-layout{display:flex;min-height:100vh;padding-top:70px;}
+        .docs-sidebar{width:260px;min-width:220px;background:#1e293b;padding:32px 20px;position:sticky;top:70px;height:calc(100vh - 70px);overflow-y:auto;border-right:1px solid #334155;}
+        .docs-sidebar h3{font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;color:#64748b;margin:20px 0 8px;}
+        .docs-sidebar a{display:block;padding:8px 12px;color:#94a3b8;text-decoration:none;border-radius:8px;font-size:0.9rem;margin-bottom:2px;transition:all 0.2s;}
+        .docs-sidebar a:hover,.docs-sidebar a.active{background:#3b82f6;color:white;}
+        .docs-sidebar a i{width:18px;margin-right:6px;}
+        .docs-content{flex:1;padding:48px 56px;max-width:900px;}
+        .docs-content h1{font-size:2.4rem;margin-bottom:12px;color:white;}
+        .docs-content h2{font-size:1.6rem;margin:40px 0 16px;color:white;border-bottom:1px solid #334155;padding-bottom:10px;}
+        .docs-content h3{font-size:1.2rem;margin:28px 0 10px;color:#60a5fa;}
+        .docs-content p,.docs-content li{line-height:1.8;color:#94a3b8;}
+        .docs-content ul,.docs-content ol{padding-left:24px;margin-bottom:20px;}
+        .docs-content li{margin-bottom:6px;}
+        .docs-content code{background:#1e293b;border:1px solid #334155;padding:2px 8px;border-radius:5px;font-family:monospace;color:#f472b6;font-size:0.9em;}
+        .docs-content pre{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:20px 24px;overflow-x:auto;margin:20px 0;}
+        .docs-content pre code{background:none;border:none;color:#a5f3fc;padding:0;font-size:0.95rem;}
+        .alert-box{border-radius:10px;padding:16px 20px;margin:20px 0;display:flex;gap:14px;align-items:flex-start;}
+        .alert-box.tip{background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);}
+        .alert-box.info{background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);}
+        .alert-box.warn{background:rgba(234,179,8,0.1);border:1px solid rgba(234,179,8,0.3);}
+        .alert-box.tip i{color:#22c55e;}
+        .alert-box.info i{color:#3b82f6;}
+        .alert-box.warn i{color:#eab308;}
+        .step-badge{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;background:#3b82f6;color:white;border-radius:50%;font-weight:700;font-size:0.9rem;flex-shrink:0;}
+        .step-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:24px;}
+        .step-item .step-body h3{margin:4px 0 8px;}
+        .doc-hero{background:linear-gradient(135deg,#1e293b,#0f172a);border-radius:16px;padding:36px;margin-bottom:40px;}
+        .doc-hero p{font-size:1.1rem;color:#94a3b8;margin:10px 0 0;}
+        @media(max-width:768px){.docs-layout{flex-direction:column;}.docs-sidebar{width:100%;height:auto;position:relative;top:0;}.docs-content{padding:24px 20px;}}
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <img src="assets/images/banglaHost.png" alt="BanglaHost Logo" class="site-logo">
+            <span class="brand-name">BanglaHost</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="docs.html">Docs</a></li>
+            <li><a href="index.html#download" class="btn-primary-outline">Download</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="docs-layout">
+<aside class="docs-sidebar">
+    <h3>Getting Started</h3>
+    <a href="#installation"><i class="fa-solid fa-download"></i> Installation</a>
+    <a href="#quick-start"><i class="fa-solid fa-rocket"></i> Quick Start</a>
+    <a href="#requirements"><i class="fa-solid fa-desktop"></i> Requirements</a>
+    <h3>Services</h3>
+    <a href="#nginx"><i class="fa-solid fa-server"></i> Nginx</a>
+    <a href="#php"><i class="fa-brands fa-php"></i> PHP</a>
+    <a href="#mysql"><i class="fa-solid fa-database"></i> MySQL</a>
+    <a href="#mailpit"><i class="fa-solid fa-envelope"></i> Mailpit</a>
+    <a href="#nodejs"><i class="fa-brands fa-node-js"></i> Node.js</a>
+    <a href="#python"><i class="fa-brands fa-python"></i> Python</a>
+    <h3>Features</h3>
+    <a href="#wordpress"><i class="fa-brands fa-wordpress"></i> WordPress</a>
+    <a href="#vhosts"><i class="fa-solid fa-network-wired"></i> Virtual Hosts</a>
+    <a href="#sql-studio"><i class="fa-solid fa-table"></i> SQL Studio</a>
+    <a href="#tunneling"><i class="fa-solid fa-globe"></i> Tunneling</a>
+    <a href="#winget"><i class="fa-brands fa-windows"></i> Winget</a>
+    <h3>Support</h3>
+    <a href="https://sourceforge.net/projects/banglahost-local-web-server/support" target="_blank"><i class="fa-solid fa-circle-question"></i> Forum</a>
+    <a href="index.html#community"><i class="fa-solid fa-users"></i> Community</a>
+</aside>
+<main class="docs-content">
+    <div class="doc-hero">
+        <h1>📖 BanglaHost Docs</h1>
+        <p>Everything you need to set up, configure, and get the most out of BanglaHost — the modern local web development platform for Windows.</p>
+    </div>
+
+    <section id="installation">
+        <h2><i class="fa-solid fa-download"></i> Installation</h2>
+        <p>Install BanglaHost via EXE installer, Microsoft Store, or Winget.</p>
+        <h3>Option 1: EXE Installer (Recommended)</h3>
+        <div class="step-item"><div class="step-badge">1</div><div class="step-body"><h3>Download</h3><p>Download <code>BanglaHost-Setup-1.5.1.0.exe</code> from SourceForge. <a href="https://sourceforge.net/projects/banglahost-local-web-server/files/BanglaHost-Setup-1.5.1.0.exe/download" target="_blank" style="color:#60a5fa;">Click here</a></p></div></div>
+        <div class="step-item"><div class="step-badge">2</div><div class="step-body"><h3>Run the installer</h3><p>Double-click and follow the on-screen instructions. No complex configuration needed.</p></div></div>
+        <div class="step-item"><div class="step-badge">3</div><div class="step-body"><h3>Launch</h3><p>Open BanglaHost from the Start Menu or Desktop shortcut.</p></div></div>
+
+        <h3 id="winget">Option 2: Winget (Command Line)</h3>
+        <pre><code>winget install ITAmadersomajInc.BanglaHostLocalWebServer</code></pre>
+        <div class="alert-box info"><i class="fa-solid fa-circle-info"></i><p>Winget is built into Windows 11 and Windows 10 (1709+). No additional setup needed.</p></div>
+
+        <h3>Option 3: Microsoft Store</h3>
+        <p>Search <strong>"BanglaHost"</strong> in the Microsoft Store or visit <a href="https://apps.microsoft.com/store/detail/9MWFKR8D8318" target="_blank" style="color:#60a5fa;">this link</a>.</p>
+    </section>
+
+    <section id="requirements">
+        <h2><i class="fa-solid fa-desktop"></i> System Requirements</h2>
+        <ul>
+            <li><strong>OS:</strong> Windows 10 (Build 17763+) or Windows 11</li>
+            <li><strong>Architecture:</strong> x64 (64-bit)</li>
+            <li><strong>RAM:</strong> 4 GB minimum, 8 GB recommended</li>
+            <li><strong>Disk:</strong> 500 MB; SSD recommended</li>
+            <li><strong>Runtime:</strong> .NET 8 Desktop Runtime (auto-installed)</li>
+        </ul>
+    </section>
+
+    <section id="quick-start">
+        <h2><i class="fa-solid fa-rocket"></i> Quick Start</h2>
+        <div class="step-item"><div class="step-badge">1</div><div class="step-body"><h3>Start Services</h3><p>Toggle <strong>Nginx</strong>, <strong>PHP</strong>, and <strong>MySQL</strong> on from the dashboard.</p></div></div>
+        <div class="step-item"><div class="step-badge">2</div><div class="step-body"><h3>Create a Virtual Host</h3><p>Go to <strong>Virtual Hosts</strong> → <strong>Add New</strong>. Enter a domain like <code>mysite.local</code> and select your project folder.</p></div></div>
+        <div class="step-item"><div class="step-badge">3</div><div class="step-body"><h3>Open in Browser</h3><p>Visit <code>http://mysite.local</code> in your browser. Done!</p></div></div>
+    </section>
+
+    <section id="nginx">
+        <h2><i class="fa-solid fa-server"></i> Nginx</h2>
+        <p>BanglaHost uses Nginx for high performance and low memory usage. Toggle it from the dashboard. Config files:</p>
+        <pre><code>C:\BanglaHost\nginx\conf\</code></pre>
+        <div class="alert-box warn"><i class="fa-solid fa-triangle-exclamation"></i><p>Always restart Nginx after editing configuration files.</p></div>
+    </section>
+
+    <section id="php">
+        <h2><i class="fa-brands fa-php"></i> PHP</h2>
+        <p>Switch PHP versions per site from <strong>PHP Manager</strong>. Common extensions (mbstring, curl, gd, zip, pdo_mysql) are pre-enabled.</p>
+        <pre><code>C:\BanglaHost\php\php8.x\php.ini</code></pre>
+    </section>
+
+    <section id="mysql">
+        <h2><i class="fa-solid fa-database"></i> MySQL / MariaDB</h2>
+        <p>BanglaHost ships with MariaDB (MySQL-compatible).</p>
+        <pre><code>Host: 127.0.0.1  |  Port: 3306  |  User: root  |  Password: (empty)</code></pre>
+        <div class="alert-box tip"><i class="fa-solid fa-lightbulb"></i><p>Set a strong root password from SQL Studio → User Management.</p></div>
+    </section>
+
+    <section id="mailpit">
+        <h2><i class="fa-solid fa-envelope"></i> Mailpit</h2>
+        <p>Mailpit captures all outgoing emails locally. No real email is sent. Access at:</p>
+        <pre><code>http://localhost:8025</code></pre>
+        <p>SMTP config for your app:</p>
+        <pre><code>MAIL_HOST=127.0.0.1
+MAIL_PORT=1025
+MAIL_ENCRYPTION=null</code></pre>
+    </section>
+
+    <section id="nodejs">
+        <h2><i class="fa-brands fa-node-js"></i> Node.js</h2>
+        <p>Use the built-in <strong>NPM Runner</strong> to run your Node.js/Next.js/Nuxt apps. Select your project folder, choose a script (dev/start/build), and click Run.</p>
+    </section>
+
+    <section id="python">
+        <h2><i class="fa-brands fa-python"></i> Python</h2>
+        <p>Run Django, Flask, FastAPI from BanglaHost's Python environment manager. Automatic <code>venv</code> management per project is supported.</p>
+    </section>
+
+    <section id="wordpress">
+        <h2><i class="fa-brands fa-wordpress"></i> 1-Click WordPress</h2>
+        <div class="step-item"><div class="step-badge">1</div><div class="step-body"><h3>Open WordPress Installer</h3><p>Dashboard → <strong>WordPress</strong> → <strong>Install New</strong>.</p></div></div>
+        <div class="step-item"><div class="step-badge">2</div><div class="step-body"><h3>Enter Details</h3><p>Provide site name and domain (e.g., <code>myblog.local</code>). BanglaHost creates the DB, vhost, and config automatically.</p></div></div>
+        <div class="step-item"><div class="step-badge">3</div><div class="step-body"><h3>Done!</h3><p>Visit <code>http://myblog.local</code> and log in at <code>/wp-admin</code>.</p></div></div>
+    </section>
+
+    <section id="vhosts">
+        <h2><i class="fa-solid fa-network-wired"></i> Virtual Hosts</h2>
+        <p>Run multiple websites locally with custom domains like <code>myproject.local</code>. BanglaHost automatically manages your <code>hosts</code> file and Nginx config — no manual editing required!</p>
+    </section>
+
+    <section id="sql-studio">
+        <h2><i class="fa-solid fa-table"></i> SQL Studio</h2>
+        <p>A native, fast alternative to phpMyAdmin, built into BanglaHost. Features:</p>
+        <ul>
+            <li>Table browsing with inline editing</li>
+            <li>SQL query editor with syntax highlighting</li>
+            <li>Import &amp; Export (SQL, CSV)</li>
+            <li>User management &amp; database creation</li>
+        </ul>
+    </section>
+
+    <section id="tunneling">
+        <h2><i class="fa-solid fa-globe"></i> Secure Tunneling</h2>
+        <p>Share your local project publicly using <strong>Cloudflare Tunnel</strong> or <strong>ngrok</strong>.</p>
+        <div class="step-item"><div class="step-badge">1</div><div class="step-body"><h3>Open Tunnel</h3><p>Sidebar → <strong>Cloudflare Tunnel</strong>.</p></div></div>
+        <div class="step-item"><div class="step-badge">2</div><div class="step-body"><h3>Enter Local URL</h3><p>Enter <code>http://localhost</code> or any virtual host URL.</p></div></div>
+        <div class="step-item"><div class="step-badge">3</div><div class="step-body"><h3>Get Public URL</h3><p>A public HTTPS URL is generated instantly — share it with anyone!</p></div></div>
+        <div class="alert-box tip"><i class="fa-solid fa-lightbulb"></i><p>Cloudflare Tunnel is free and requires no account. Perfect for webhook testing and demos!</p></div>
+    </section>
+
+    <div style="margin-top:60px;padding:32px;background:#1e293b;border-radius:16px;text-align:center;">
+        <h2 style="color:white;font-size:1.6rem;margin-bottom:12px;">❓ Still have questions?</h2>
+        <p style="color:#94a3b8;margin-bottom:24px;">Join the community forum or check out the support page for more help.</p>
+        <a href="https://sourceforge.net/projects/banglahost-local-web-server/support" target="_blank" class="btn-primary" style="display:inline-block;padding:12px 28px;text-decoration:none;"><i class="fa-solid fa-circle-question"></i> Visit Support Forum</a>
+    </div>
+</main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
