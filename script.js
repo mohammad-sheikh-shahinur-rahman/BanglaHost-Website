@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Fetch latest release from GitHub to dynamically update download links
-    fetch('https://api.github.com/repos/mohammad-sheikh-shahinur-rahman/BanglaHost/releases/latest')
+    fetch('https://api.github.com/repos/mohammad-sheikh-shahinur-rahman/BanglaHost-Website/releases/latest')
         .then(response => response.json())
         .then(data => {
             if (data && data.assets) {
