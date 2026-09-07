@@ -19,4 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Fetch latest release from GitHub to dynamically update download links
+    fetch('https://api.github.com/repos/mohammad-sheikh-shahinur-rahman/BanglaHost/releases/latest')
+        .then(response => response.json())
+        .then(data => {
+            if (data && data.assets) {
+                const exeAsset = data.assets.find(a => a.name.endsWith('.exe'));
+                if (exeAsset) {
+                    document.querySelectorAll('.download-exe-btn').forEach(btn => {
+                        btn.href = exeAsset.browser_download_url;
+                    });
+                }
+            }
+        })
+        .catch(err => console.error('Error fetching latest release:', err));
 });
